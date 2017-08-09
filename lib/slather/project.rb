@@ -164,8 +164,8 @@ module Slather
       end
 
       if dir == nil
-        # Xcode 7.3 moved the location of Coverage.profdata
-        dir = Dir[File.join("#{build_directory}","/**/CodeCoverage")].first
+        # Xcode 9 moved the location of Coverage.profdata
+        dir = Dir[File.join("#{build_directory}","**")].first
       end
 
       raise StandardError, "No coverage directory found." unless dir != nil
